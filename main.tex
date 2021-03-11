@@ -1,0 +1,204 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+
+\newcommand{\resumeItem}[1]{
+  \item\small{#1}
+}
+
+\newcommand{\resumeItemPrefix}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+% Just in case someone needs a heading that does not need to be in a list
+\newcommand{\resumeHeading}[4]{
+    \begin{tabular*}{0.99\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItemPrefix{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\cdot$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{\href{https://carey.li}{\Large Carey Li}} & Email : \href{mailto:hello@carey.li}{hello@carey.li}\\
+  \href{https://carey.li}{https://carey.li} & Mobile : +852 5743 5883 \\
+\end{tabular*}
+
+%-----------EDUCATION-----------------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of New South Wales}{Sydney, Australia}
+      {Bachelor of Science (Computer Science -- Security Engineering);  WAM 81.42}{2017 -- 2019}
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Jane Street}{Hong Kong}
+      {Production Engineer}{Jan 2020 - Present}
+      \resumeItemListStart
+        \resumeItem{Supporting post-trade systems as the first production engineer in the APAC region.}
+        \resumeItem{Responsible for triaging and resolving production issues, coordinating with developers and notifying stakeholders as required.}
+        \resumeItem{Developed tooling to expedite common support requests, reducing total time spent and human errors.}
+        \resumeItem{Automated and standardised complex workflows for requesting new trading flows.}
+        \resumeItem{Developed improvements to sheet downloading infrastructure, and the support tooling surrounding these processes.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Optiver Asia Pacific}{Sydney, Australia}
+      {Software Developer Intern}{Feb 2019 -- Jun 2019}
+      \resumeItemListStart
+        \resumeItem{Developed tooling to enable fleet-wide continuous deployment, with 90\% of applications continuously deployed.}
+        \resumeItem{Created web dashboards to surface statistics on package deployments and state.}
+        \resumeItem{Managed rollouts of continuous deployment tooling through Ansible.}
+      \resumeItemListEnd
+      
+    \resumeSubSubheading
+     {Application Engineer Intern}{Nov 2018 -- Feb 2019}
+     \resumeItemListStart
+        \resumeItem{Implemented a process status reporting framework, surfacing metrics on over three thousand applications.}
+        \resumeItem{Modernised legacy components of process control tooling, improving service reliability and quality.}
+     \resumeItemListEnd
+
+    \resumeSubheading
+      {Nasdaq (SMARTS Trade Surveillance)}{Sydney, Australia}
+      {DevOps Engineer (Contract)}{Mar 2018 -- Nov 2018}
+      \resumeItemListStart  
+          \resumeItem{Containerised existing CI pipelines, reducing test times from thirty minutes to three.}
+          \resumeItem{Created and maintained Puppet modules to effectively manage infrastructure.}
+          \resumeItem{Packaged modern software tools to supersede versions available on CentOS 6.}
+      \resumeItemListEnd
+      
+    \resumeSubSubheading
+     {DevOps Intern}{Nov 2017 -- Mar 2018}
+     \resumeItemListStart
+        \resumeItem{Implemented an automated regression testing framework, improving test coverage.}
+        \resumeItem{Developed proof of concepts for new internal tools allowing clients to self-validate data, reducing turnaround times from weeks to hours.}
+     \resumeItemListEnd
+
+    \resumeSubheading
+      {University of New South Wales}{Sydney, Australia}
+      {Tutor}{Aug 2017 -- Jun 2019}
+      \resumeItemListStart
+        \resumeItemPrefix{COMP1511 - Introduction to Programming}
+          {Introductory course to programming with an emphasis on C.}
+        \resumeItemPrefix{COMP1521 - Computer System Fundamentals}
+          {Introductory course on systems programming with an emphasis on MIPS.}
+        \resumeItemPrefix{COMP6443 - Web Application Security}
+          {Course teaching defensive programming and applications analysis from an attacker mindset.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+  
+%-----------EDUCATION-----------------
+\section{Distinctions}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {PyCon 2019}{}
+      {\href{https://www.youtube.com/watch?v=l0Sazyzs1IY}{Speaker (Using Python, Flask and Docker to teach Web Pentesting)}}{2019}
+  \resumeSubheading
+      {\href{https://www.cyberchallenge.com.au/}{Cyber Challenge Australia (CySCA)}}{}
+      {Overall Second Place}{2018}
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------------
+%\section{Projects}
+%  \resumeSubHeadingListStart
+%    \resumeSubItem{QuantSoftware Toolkit}
+%      {Open source python library for financial data analysis and machine learning for finance.}
+%    \resumeSubItem{Github Visualization}
+%      {Data Visualization of Git Log data using D3 to analyze project trends over time.}
+%    \resumeSubItem{Recommendation System}
+%      {Music and Movie recommender systems using collaborative filtering on public datasets.}
+%    \resumeSubItem{Mac Setup}
+%      {Book that gives step by step instructions on setting up developer environment on Mac OS.}
+%  \resumeSubHeadingListEnd
+
+%
+%--------PROGRAMMING SKILLS------------
+%\section{Programming Skills}
+%  \resumeSubHeadingListStart
+%    \item{
+%      \textbf{Languages}{: Scala, Python, Javascript, C++, SQL, Java}
+%      \hfill
+%      \textbf{Technologies}{: AWS, Play, React, Kafka, GCE}
+%    }
+%  \resumeSubHeadingListEnd
+
+
+%-------------------------------------------
+\end{document}
