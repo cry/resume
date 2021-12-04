@@ -1,0 +1,17 @@
+name: generate-pdf-and-png
+on: [push]
+jobs:
+  generate-pdf-and-png:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository checkout
+        uses: actions/checkout@v2
+      - name: Compile tex
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: resume.tex
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: resume
+          path: resume.pdf
