@@ -7,11 +7,13 @@
 \usepackage[usenames,dvipsnames]{color}
 \usepackage{verbatim}
 \usepackage{enumitem}
-\usepackage[hidelinks]{hyperref}
+\usepackage{hyperref}
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
 \input{glyphtounicode}
+
+
 
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
@@ -95,33 +97,24 @@
   \href{https://carey.li}{carey.li} $\cdot$ \href{https://github.com/cry}{github.com/cry} $\cdot$ \href{https://linkedin.com/in/definitelycarey}{linkedin.com/in/definitelycarey} & Mobile : +852 5743 5883 \\
 \end{tabular*}
 
-%-----------EDUCATION-----------------
-\section{Education}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {University of New South Wales}{Sydney, Australia}
-      {B.Sc. (Computer Science, majoring in Security Engineering);  WAM 81.42}{2017 -- 2019}
-  \resumeSubHeadingListEnd
 
 %-----------EXPERIENCE-----------------
 \section{Experience}
   \resumeSubHeadingListStart
-
     \resumeSubheading
       {Jane Street}{Hong Kong}
-      {Production Engineer $\cdot$ OCaml}{Jan 2020 - Present}
+      {Production Engineer}{Jan 2020 - Present}
       \resumeItemListStart
-        \resumeItem{Supporting post-trade systems as the first production engineer in the APAC region.}
-        \resumeItem{Responsible for triaging and resolving production issues, coordinating with developers, and notifying stakeholders.}
-        \resumeItem{Developed tooling to expedite common support requests, reducing total time spent and human errors.}
-        \resumeItem{Automated and standardised complex workflows for requesting new trading flows.}
-        \resumeItem{Implemented improvements to sheet downloading infrastructure, and the support tooling surrounding these processes.}
-        \resumeItem{Interviewed candidates and on-boarded new hires, providing mentorship and training.}
+        \resumeItem{Proposed and lead a project to overhaul sheet downloading infrastructure, improving observability and reliability of these processes whilst speeding up download times significantly \emph{(e.g. mirrors that used to take more than 2 hours now complete in 15 minutes)}.}
+        \resumeItem{Implemented a SFTPv3 client with support for parallelized mirroring, directory traversals with regex pre-matching and file prioritization. All together, these features allow for remote sites to be mirrored efficiently, cutting down the average mirror time by a factor of 4 or more.}
+        \resumeItem{Reworked the alerting and support story around mirroring processes, addressing blind spots and removing the need for expert knowledge to diagnose issues \emph{(e.g. common errors now come with a detailed list of possible faults and remediation steps)}.}
+        \resumeItem{Designed and implemented a sheet health web interface allowing operations to quickly check the status of sheets required for back-office processes in a timely and self-service manner. The interface is now used daily in every office, saving 6+ hours a week spent on inter-team asks on sheet statuses.}
+        \resumeItem{Extended the sheet web interface with support for editing sheet details, allowing users to update sheets without requiring knowledge of OCaml nor assistance from production engineers, saving 3+ hours a week.}
       \resumeItemListEnd
 
     \resumeSubheading
       {Optiver Asia Pacific}{Sydney, Australia}
-      {Software Developer Intern $\cdot$ Python, C++}{Feb 2019 -- Jun 2019}
+      {Software Developer Intern}{Feb 2019 -- Jun 2019}
       \resumeItemListStart
         \resumeItem{Developed tooling to enable fleet-wide continuous deployment, with 90\% of applications continuously deployed.}
         \resumeItem{Created web dashboards to surface statistics on package deployments and state.}
@@ -131,15 +124,15 @@
     \resumeSubSubheading
      {Application Engineer Intern}{Nov 2018 -- Feb 2019}
      \resumeItemListStart
-        \resumeItem{Implemented a process status reporting framework, surfacing metrics on over three thousand applications.}
+        \resumeItem{Implemented a process status reporting framework, surfacing metrics on over 3000 applications.}
         \resumeItem{Modernised legacy components of process control tooling, improving service reliability and quality.}
      \resumeItemListEnd
 
     \resumeSubheading
       {Nasdaq (SMARTS Trade Surveillance)}{Sydney, Australia}
-      {DevOps Engineer (Contract) $\cdot$ Python, Puppet}{Mar 2018 -- Nov 2018}
+      {DevOps Engineer (Contract)}{Mar 2018 -- Nov 2018}
       \resumeItemListStart  
-          \resumeItem{Containerised existing CI pipelines, reducing test times from thirty minutes to three.}
+          \resumeItem{Containerised existing CI pipelines, reducing test times from 30 minutes to 3.}
           \resumeItem{Created and maintained Puppet modules to effectively manage infrastructure.}
           \resumeItem{Packaged modern software tools to supersede versions available on CentOS 6.}
       \resumeItemListEnd
@@ -148,22 +141,20 @@
      {DevOps Intern}{Nov 2017 -- Mar 2018}
      \resumeItemListStart
         \resumeItem{Implemented an automated regression testing framework, improving test coverage.}
-        \resumeItem{Developed proof of concepts for new internal tools, enabling clients to self-validate data and reducing turnaround times from weeks to hours.}
+        \resumeItem{Developed proof of concepts for new internal tools, enabling clients to self-validate data, and reducing turnaround times from weeks to hours.}
      \resumeItemListEnd
 
-    \resumeSubheading
-      {University of New South Wales}{Sydney, Australia}
-      {Tutor}{Aug 2017 -- Jun 2019}
-      \resumeItemListStart
-        \resumeItemPrefix{COMP1511 - Introduction to Programming}
-          {Introductory course to programming with an emphasis on C.}
-        \resumeItemPrefix{COMP1521 - Computer System Fundamentals}
-          {Introductory course on systems programming with an emphasis on MIPS.}
-        \resumeItemPrefix{COMP6443 - Web Application Security}
-          {Course teaching defensive programming and applications analysis from an attacker mindset.}
-      \resumeItemListEnd
 
   \resumeSubHeadingListEnd
+  
+  %-----------EDUCATION-----------------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of New South Wales}{Sydney, Australia}
+      {B.Sc. (Computer Science, majoring in Security Engineering);  WAM 81.42}{2017 -- 2019}
+  \resumeSubHeadingListEnd
+
   
 %-----------EDUCATION-----------------
 \section{Distinctions}
