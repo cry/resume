@@ -17,7 +17,9 @@
 
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
-\fancyfoot{}
+\usepackage{datetime}
+\newdateformat{monthyear}{\monthname[\THEMONTH] \THEYEAR}
+\fancyfoot[C]{\footnotesize\color{Gray}Last updated \monthyear\today}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
@@ -27,6 +29,8 @@
 \addtolength{\textwidth}{1in}
 \addtolength{\topmargin}{-.5in}
 \addtolength{\textheight}{1.0in}
+\setlength{\footskip}{12pt}
+
 
 \urlstyle{same}
 
@@ -102,49 +106,36 @@
 \section{Experience}
   \resumeSubHeadingListStart
     \resumeSubheading
-      {Jane Street}{New York, USA}
-      {Production Engineer (Data Reliability – Instruments \& Symbology)}{Jun 2022 -- Present}
+      {Jane Street}{New York \& Hong Kong}
+      {Senior Production Engineer (Data Ingestion)}{Aug 2022 -- Present}
+    \resumeItemListStart
+        \resumeItem{Technical lead and owner of infrastructure for requesting, downloading and serving reference data.}
+        \resumeItem{Directly managed a new joiner and mentored multiple team members through ramp-up in data ingestion and reliability, building team depth in core areas.}
+        \resumeItem{Led the design and delivery to production of a data pipeline that ingests third-party vendor data dictionaries and auto-generates DBT models, materializing vendor reference data into datasets that expose the vendor's native data model for firm-wide consumption.}
+        \resumeItem{Cut historical data onboarding from a week-plus to a few hours post-contract, enabling the firm to act on new dataset purchases the same day rather than waiting on bespoke ingestion work.}
+        \resumeItem{Built a RAG-based GPT plugin over the vendor data dictionaries, enabling self-service natural-language queries against datasets that previously required expert knowledge to navigate.}
+        \resumeItem{Proposed and drove improvements to support workflows and tooling to support cross-region supportability of reference data systems.}
+        \resumeItem{Implemented and owned symbology and trading systems changes required for new proprietary trading flows.}
+        \resumeItem{Designed and implemented a system to efficiently service real-time and historical reference data requests from internal clients around the firm. Enabled prototyping of new trading flows and trading research without costly system changes to plumb through data.}
+        \resumeItem{Designed and implemented a replacement for a production critical legacy scheduled data request system. Eliminated production incidents arising from failed requests and supported new trading flows with new abilities to request data.}
+    \resumeItemListEnd
+    
     \resumeSubSubheading
-      {Production Engineer (Trade Booking \& Post-trade Infrastructure)}{Jan 2020 -- Jun 2022}
+      {Production Engineer (Trade Booking \& Post-trade Infrastructure)}{Jan 2020 -- Aug 2022}
       \resumeItemListStart
+        \resumeItem{Lead support for all post-trade sheet processing and trade booking systems during Hong Kong trading hours.}
         \resumeItem{Proposed and lead a project to overhaul sheet downloading infrastructure, improving observability and reliability of these processes whilst speeding up download times significantly \emph{(e.g. mirrors that used to take more than 2 hours now complete in 15 minutes)}.}
-        \resumeItem{Implemented a SFTPv3 client with support for parallelized mirroring, directory traversals with regex pre-matching and file prioritization. All together, these features allow for remote sites to be mirrored efficiently, cutting down the average mirror time by a factor of 4 or more.}
+        \resumeItem{Implemented a SFTPv3 client with support for parallelized mirroring, directory traversals with regex pre-matching and file prioritization. Together, these features allow remote sites to be mirrored efficiently, cutting down the average mirror time by a factor of 4 or more.}
         \resumeItem{Reworked the alerting and support story around mirroring processes, addressing blind spots and removing the need for expert knowledge to diagnose issues \emph{(e.g. common errors come with a list of possible faults and remediation steps)}.}
-        \resumeItem{Designed and implemented a sheet health web interface allowing operations to quickly check the status of sheets required for back-office processes in a timely and self-service manner. The interface is now used daily in every office, saving 4+ hours a week spent on inter-team asks on sheet statuses.}
-        \resumeItem{Extended the sheet web interface with support for editing sheet details, allowing users to update sheets without requiring knowledge of OCaml nor assistance from production engineers, saving 3+ hours a week.}
       \resumeItemListEnd
+
     \resumeSubheading
       {Optiver Asia Pacific}{Sydney, Australia}
-      {Software Developer Intern}{Feb 2019 -- Jun 2019}
-      \resumeItemListStart
-        \resumeItem{Developed tooling to enable fleet-wide continuous deployment, with 90\% of applications continuously deployed.}
-        \resumeItem{Created web dashboards to surface statistics on package deployments and state.}
-        \resumeItem{Managed rollouts of continuous deployment tooling through Ansible.}
-      \resumeItemListEnd
-      
-    \resumeSubSubheading
-     {Application Engineer Intern}{Nov 2018 -- Feb 2019}
-     \resumeItemListStart
-        \resumeItem{Implemented a process status reporting framework, surfacing metrics on over 3000 applications.}
-        \resumeItem{Modernised legacy components of process control tooling, improving service reliability and quality.}
-     \resumeItemListEnd
-
+      {Software Developer Intern $\cdot$ Application Engineer Intern}{Nov 2018 -- Jun 2019}
+    
     \resumeSubheading
       {Nasdaq (SMARTS Trade Surveillance)}{Sydney, Australia}
-      {DevOps Engineer (Contract)}{Mar 2018 -- Nov 2018}
-      \resumeItemListStart  
-          \resumeItem{Containerised existing CI pipelines, reducing test times from 30 minutes to 3.}
-          \resumeItem{Created and maintained Puppet modules to effectively manage infrastructure.}
-          \resumeItem{Packaged modern software tools to supersede versions available on CentOS 6.}
-      \resumeItemListEnd
-      
-    \resumeSubSubheading
-     {DevOps Intern}{Nov 2017 -- Mar 2018}
-     \resumeItemListStart
-        \resumeItem{Implemented an automated regression testing framework, improving test coverage.}
-        \resumeItem{Developed proof of concepts for new internal tools, enabling clients to self-validate data, and reducing turnaround times from weeks to hours.}
-     \resumeItemListEnd
-
+      {DevOps Engineer (Contract) $\cdot$ DevOps Intern}{Nov 2017 -- Nov 2018}
 
   \resumeSubHeadingListEnd
   
@@ -153,8 +144,8 @@
   \resumeSubHeadingListStart
     \resumeSubheading
       {University of New South Wales}{Sydney, Australia}
-      {B.Sc. (Computer Science, majoring in Security Engineering);  WAM 81.42}{2017 -- 2019}
-  \resumeSubHeadingListEnd
+      {B.Sc. (Computer Science, majoring in Security Engineering);  WAM 81.42}{Jan 2017 -- Dec 2019}
+      \resumeSubHeadingListEnd
 
   
 %-----------EDUCATION-----------------
@@ -170,31 +161,4 @@
       {Facebook Bug Bounty Program }{}
       {Denial of Service Vulnerability in Facebook Messenger}{2016}
   \resumeSubHeadingListEnd
-
-%-----------PROJECTS-----------------
-%\section{Projects}
-%  \resumeSubHeadingListStart
-%    \resumeSubItem{QuantSoftware Toolkit}
-%      {Open source python library for financial data analysis and machine learning for finance.}
-%    \resumeSubItem{Github Visualization}
-%      {Data Visualization of Git Log data using D3 to analyze project trends over time.}
-%    \resumeSubItem{Recommendation System}
-%      {Music and Movie recommender systems using collaborative filtering on public datasets.}
-%    \resumeSubItem{Mac Setup}
-%      {Book that gives step by step instructions on setting up developer environment on Mac OS.}
-%  \resumeSubHeadingListEnd
-
-%
-%--------PROGRAMMING SKILLS------------
-%\section{Programming Skills}
-%  \resumeSubHeadingListStart
-%    \item{
-%      \textbf{Languages}{: Scala, Python, Javascript, C++, SQL, Java}
-%      \hfill
-%      \textbf{Technologies}{: AWS, Play, React, Kafka, GCE}
-%    }
-%  \resumeSubHeadingListEnd
-
-
-%-------------------------------------------
 \end{document}
