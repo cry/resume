@@ -85,7 +85,7 @@
 
 \renewcommand{\labelitemii}{$\cdot$}
 
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,label={}]}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0pt,label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 \newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=*]}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
@@ -108,25 +108,29 @@
     \resumeSubheading
       {Jane Street}{New York \& Hong Kong}
       {Senior Production Engineer (Data Ingestion)}{Aug 2022 -- Present}
+    \item[]\vspace{-5pt}
+    \begin{tabular*}{0.97\textwidth}{l}
+      \textit{\small Technical lead for the platform that requests, ingests and serves third-party reference data firm-wide.}
+    \end{tabular*}\vspace{-5pt}
     \resumeItemListStart
-        \resumeItem{Technical lead and owner of infrastructure for requesting, downloading and serving reference data.}
-        \resumeItem{Directly managed a new joiner and mentored multiple team members through ramp-up in data ingestion and reliability, building team depth in core areas.}
-        \resumeItem{Led the design and delivery to production of a data pipeline that ingests third-party vendor data dictionaries and auto-generates DBT models, materializing vendor reference data into datasets that expose the vendor's native data model for firm-wide consumption.}
-        \resumeItem{Cut historical data onboarding from a week-plus to a few hours post-contract, enabling the firm to act on new dataset purchases the same day rather than waiting on bespoke ingestion work.}
-        \resumeItem{Built a RAG-based GPT plugin over the vendor data dictionaries, enabling self-service natural-language queries against datasets that previously required expert knowledge to navigate.}
-        \resumeItem{Proposed and drove improvements to support workflows and tooling to support cross-region supportability of reference data systems.}
-        \resumeItem{Implemented and owned symbology and trading systems changes required for new proprietary trading flows.}
-        \resumeItem{Designed and implemented a system to efficiently service real-time and historical reference data requests from internal clients around the firm. Enabled prototyping of new trading flows and trading research without costly system changes to plumb through data.}
-        \resumeItem{Designed and implemented a replacement for a production critical legacy scheduled data request system. Eliminated production incidents arising from failed requests and supported new trading flows with new abilities to request data.}
+        \resumeItem{Cut historical data onboarding from a week-plus to a few hours post-contract by designing a pipeline that ingests vendor data dictionaries and auto-generates DBT models, letting the firm act on new dataset purchases the same day rather than waiting on bespoke ingestion work.}
+        \resumeItem{Built a RAG-based GPT plugin over vendor data dictionaries, enabling self-service natural-language queries against datasets that previously required expert knowledge to navigate.}
+        \resumeItem{Designed and shipped a replacement for a production-critical legacy scheduled data request system, eliminating a recurring class of production incidents and unblocking new trading flows that the old system couldn't express.}
+        \resumeItem{Designed and implemented a real-time and historical reference data service for internal clients, letting trading research prototype new flows without costly plumbing changes per dataset.}
+        \resumeItem{Owned symbology and trading system changes for new proprietary trading flows, and hardened symbology services against sustained query load from trading systems by introducing telemetry and performance metrics, then using them to identify bottlenecks and increase throughput in hot paths.}
+        \resumeItem{Drove a sustained reduction in weekend on-call load after a two-month stretch of being paged every weekend: root-caused the recurring sources of pages and shipped fixes and process changes that eliminated them, restoring weekends for the team.}
+        \resumeItem{Managed one new joiner end-to-end and mentored three interns over three years alongside multiple team members through ramp-up on data ingestion systems and reliability, building team depth in areas previously held by one or two people.}
     \resumeItemListEnd
     
     \resumeSubSubheading
       {Production Engineer (Trade Booking \& Post-trade Infrastructure)}{Jan 2020 -- Aug 2022}
+      \item[]\vspace{-5pt}
+      \begin{tabular*}{0.97\textwidth}{l}
+        \textit{\small Lead support for post-trade sheet processing and trade booking systems during Hong Kong trading hours.}
+      \end{tabular*}\vspace{-5pt}
       \resumeItemListStart
-        \resumeItem{Lead support for all post-trade sheet processing and trade booking systems during Hong Kong trading hours.}
-        \resumeItem{Proposed and lead a project to overhaul sheet downloading infrastructure, improving observability and reliability of these processes whilst speeding up download times significantly \emph{(e.g. mirrors that used to take more than 2 hours now complete in 15 minutes)}.}
-        \resumeItem{Implemented a SFTPv3 client with support for parallelized mirroring, directory traversals with regex pre-matching and file prioritization. Together, these features allow remote sites to be mirrored efficiently, cutting down the average mirror time by a factor of 4 or more.}
-        \resumeItem{Reworked the alerting and support story around mirroring processes, addressing blind spots and removing the need for expert knowledge to diagnose issues \emph{(e.g. common errors come with a list of possible faults and remediation steps)}.}
+        \resumeItem{Overhauled sheet downloading infrastructure end-to-end: built a parallelized SFTPv3 client supporting directory traversal with regex pre-matching and file prioritization, cutting average mirror times by 4x or more \emph{(e.g. a 2-hour mirror now completes in 15 minutes)} while improving observability and reliability.}
+        \resumeItem{Rebuilt alerting and runbooks for mirroring, removing the need for expert knowledge to triage - common errors now surface with likely causes and remediation steps inline.}
       \resumeItemListEnd
 
     \resumeSubheading
